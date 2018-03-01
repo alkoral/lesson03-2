@@ -171,7 +171,6 @@ $duck_old->producer = "Старые Васюки Ltd.";
 $duck_old->weight = 2;
 $duck_old->expires = true;
 echo $duck_old->title." фабрики ".$duck_old->producer." стоит ".$duck_old->getPrice()." рублей<br>";
-echo $duck_old->note;
 
 $duck_fresh = new Duck("Утка", 600);
 $duck_fresh->producer = "Новые Васюки Inc.";
@@ -193,12 +192,12 @@ class Item extends Product implements Price
   }
 }
 
-$drink = new Product("Coca-Cola", 50);
+$drink = new Item("Coca-Cola", 50);
 $drink->category = "Напитки";
 $drink->discount = 5;
 echo "Товар ".$drink->title." из категории ".$drink->category." стоит ".$drink->getPrice()." рублей<br>";
 
-$pizza = new Product("Пицца \"Маргарита\"", 750);
+$pizza = new Item("Пицца \"Маргарита\"", 750);
 $pizza->category = "Закуски";
 $pizza->discount = 15;
 echo "Товар ".$pizza->title." из категории ".$pizza->category." стоит ".$pizza->getPrice()." рублей<br>";
